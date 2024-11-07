@@ -38,7 +38,7 @@ export const updateTrip = async (req, res) => {
         const itemToUpdate = trip.items.id(itemId)
         itemToUpdate.description = updatedDescription
         await trip.save()
-
+        
         res.status(200).json({success: true, message: "Item updated successfully"})
 
     } catch (error) {
