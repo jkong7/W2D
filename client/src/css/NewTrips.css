@@ -1,0 +1,116 @@
+
+body {
+    background-color: #f4e1c4;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.new-trip-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px; 
+    background: linear-gradient(135deg, #f5e0c8, #f3d4a6);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 500px; 
+    width: 100%;
+    overflow: hidden;
+}
+
+.new-trip-container::before,
+.new-trip-container::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 20px;
+    background-color: #f3d4a6;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: -1;
+}
+
+.new-trip-container::before {
+    top: -10px;
+}
+
+.new-trip-container::after {
+    bottom: -10px;
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #6b4f4f;
+    margin-bottom: 24px;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 16px; 
+}
+
+label {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-bottom: 16px;
+}
+
+span {
+    font-size: 1.125rem;
+    color: #6b4f4f;
+    margin-bottom: 8px;
+    width: 100%;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    max-width: 400px; 
+    padding: 12px;
+    font-size: 1rem;
+    color: #6b4f4f;
+    background-color: #fff8ec;
+    border: 1px solid #d1b3a0;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #c0774e;
+}
+
+button[type="submit"] {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    background-color: #d88a58;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #c0774e;
+    transform: scale(1.05);
+}

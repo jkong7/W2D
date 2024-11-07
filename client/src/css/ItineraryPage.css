@@ -1,0 +1,208 @@
+/* ItineraryPage.css */
+
+body {
+    background-color: #f4e1c4;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.itinerary-container {
+    position: relative;
+    padding: 32px;
+    background: linear-gradient(135deg, #f5e0c8, #f3d4a6);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.itinerary-container::before,
+.itinerary-container::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 20px;
+    background-color: #f3d4a6;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: -1;
+}
+
+.itinerary-container::before {
+    top: -10px;
+}
+
+.itinerary-container::after {
+    bottom: -10px;
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #6b4f4f;
+    margin-bottom: 24px;
+}
+
+/* Styling for each day section */
+.day-section {
+    margin-bottom: 20px;
+}
+
+.day-section h3 {
+    font-size: 1.25rem;
+    color: #6b4f4f;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+/* Styling for location cards */
+.location-card {
+    background-color: #fff8ec;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.125rem;
+    color: #6b4f4f;
+}
+
+.location-name {
+    font-weight: 500;
+}
+
+.edit-button {
+    background-color: #d88a58;
+    color: #ffffff;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.edit-button:hover {
+    background-color: #c0774e;
+    transform: scale(1.05);
+}
+
+/* Modal styling */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modal-content {
+    background-color: #fff8ec;
+    padding: 24px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #6b4f4f;
+    cursor: pointer;
+}
+
+h3 {
+    font-size: 1.25rem;
+    color: #6b4f4f;
+    margin-bottom: 16px;
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    padding: 12px;
+    font-size: 1rem;
+    color: #6b4f4f;
+    background-color: #fff;
+    border: 1px solid #d1b3a0;
+    border-radius: 10px;
+    outline: none;
+    resize: none;
+    margin-bottom: 16px;
+}
+
+.save-button {
+    background-color: #d88a58;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.save-button:hover {
+    background-color: #c0774e;
+    transform: scale(1.05);
+}
+
+.edit-button {
+    background-color: #d88a58;
+    color: #ffffff;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.edit-button:hover {
+    background-color: #c0774e;
+    transform: scale(1.05);
+}
+
+.dashboard-button {
+    background-color: #d88a58; 
+    color: white;
+    border: none;
+    padding: 12px 24px; 
+    font-size: 1rem; 
+    font-weight: bold;
+    border-radius: 10px; 
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.dashboard-button:hover {
+    background-color: #c0774e; 
+    transform: scale(1.05); 
+}
