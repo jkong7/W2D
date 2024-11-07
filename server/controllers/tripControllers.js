@@ -56,9 +56,10 @@ export const createTrip = async (req, res) => {
             items: items
         })
         await newTrip.save()
-        res.status(201).json({success: true, message: "Trip successfully created"})
+        res.status(201).json({success: true, message: "Trip successfully created", trip: newTrip})
     } catch (error) {
         res.status(500).json({success: false, message: error.message})
     }
 }
+
 
