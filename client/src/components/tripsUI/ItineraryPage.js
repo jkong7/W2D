@@ -10,20 +10,20 @@ const ItineraryPage = () => {
 
     const trip = trips.find((trip) => trip._id === tripId);
 
-    const [selectedLocation, setSelectedLocation] = useState(null);
+    const [selectedItem, setSelectedItem] = useState(null);
     const [editedDescription, setEditedDescription] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const openModal = (location) => {
-        setSelectedLocation(location);
-        setEditedDescription(location.description);
+    const openModal = (item) => {
+        setSelectedItem(item);
+        setEditedDescription(item.description);
         setIsModalOpen(true);
     };
 
     const handleSave = () => {
-        if (selectedLocation) {
+        if (selectedItem) {
             try {
-                updateTrip(tripId, selectedLocation._id, editedDescription)
+                updateTrip(tripId, selectedItem._id, editedDescription)
             } catch (error) {
                 throw new Error('Error updating trip description')
             }            
@@ -68,7 +68,7 @@ const ItineraryPage = () => {
                         <button className="close-button" onClick={() => setIsModalOpen(false)}>
                             &times;
                         </button>
-                        <h3>Edit Description for {selectedLocation?.location}</h3>
+                        <h3>Edit Description for {selectedItem?.location}</h3>
                         <textarea
                             value={editedDescription}
                             onChange={(e) => setEditedDescription(e.target.value)}

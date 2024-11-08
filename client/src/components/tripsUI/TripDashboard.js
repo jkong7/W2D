@@ -24,16 +24,13 @@ const TripDashboard = () => {
     };
 
     const handleDelete = async (tripId) => {
-        if (window.confirm("Are you sure you want to delete this trip?")) {
-            try {
-                await deleteTrip(tripId); 
-            } catch (error) {
-                throw new Error('Error deleting trip')
-            }
+        try {
+            await deleteTrip(tripId); 
+        } catch (error) {
+            throw new Error('Error deleting trip')
         }
     };
     
-
     if (isLoadingTrips) {
         return (
             <div className="dashboard-container">
@@ -42,47 +39,39 @@ const TripDashboard = () => {
         );
     }
 
+    //"dashboard-container", dashboard-card", "dashboard-header", 
+    //section-title, sign-out-button, recommendations-list, recommendation item
+    //section title, trips-list-scrollable, trip-item, delete-trip-button
+    //link to trip-link, new-trip button 
+
     return (
-        <div className="dashboard-container">
-            <div className="dashboard-card">
-                <div className="dashboard-header">
-                    <h2 className="section-title">RECS:</h2>
-                    <button className="sign-out-button" onClick={handleSignOut}>
-                        Sign Out
-                    </button>
-                </div>
-                <div className="recommendations-list">
-                    {mockRecommendations.map((rec) => (
-                        <div key={rec.id} className="recommendation-item">
-                            {rec.title}
-                        </div>
-                    ))}
-                </div>
+        <div className="dashboard-card">
 
-                <h2 className="section-title">{user?.name ? `${user.name}'s Trips` : 'My Trips'}:</h2>
-                <div className="trips-list scrollable">
-                    {trips.map((trip) => (
-                        <div key={trip._id} className="trip-item">
-                            <button
-                                className="delete-trip-button"
-                                onClick={() => handleDelete(trip._id)}
-                            >
-                                &times;
-                            </button>
-                            <Link to={`/itinerary/${trip._id}`} className="trip-link">
-                                {trip.name}
-                            </Link>
-                        </div>
-                    ))}
-                </div>
+                <h2 className="section-title">RECS:</h2>
+                <button onClick={handleSignOut} className="sign-out-button">Sign out</button>
 
-
-                <button className="new-trip-button" onClick={handleNewTripClick}>
-                    New Trip
-                </button>
+            <div className="recommendations-list">
+                {mockRecommendations.map(rec=>(
+                    <div key={rec.id} className="recommendation-item">{rec.title}</div>
+                ))}
             </div>
+
+            <div className="section-title">{user?.name ? `${user.name}'s Trips` : 'My Trips'}</div>
+            
+            <div className="trips-list scrollable">
+                {trips.map(trip=>(
+                    <div key={trip._id} className="trip-item">
+                        <button onClick={()=>handleDelete(trip._id)} className="delete-trip-button">&times;</button> 
+                        <Link className="trip-link" to={`/itinerary/${trip._id}`}>{trip.name}</Link>
+                    </div>
+                ))}
+            </div>
+
+            <button onClick={handleNewTripClick} className="new-trip-button"> New Trip </button>
+
         </div>
-    );
+    )
 };
 
 export default TripDashboard;
+

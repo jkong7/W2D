@@ -1,4 +1,3 @@
-/* ItineraryPage.css */
 
 body {
     background-color: #f4e1c4;
@@ -23,27 +22,6 @@ body {
     margin: 20px auto;
 }
 
-.itinerary-container::before,
-.itinerary-container::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 20px;
-    background-color: #f3d4a6;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: -1;
-}
-
-.itinerary-container::before {
-    top: -10px;
-}
-
-.itinerary-container::after {
-    bottom: -10px;
-}
 
 h2 {
     font-size: 1.75rem;
@@ -52,7 +30,6 @@ h2 {
     margin-bottom: 24px;
 }
 
-/* Styling for each day section */
 .day-section {
     margin-bottom: 20px;
 }
@@ -64,7 +41,6 @@ h2 {
     margin-bottom: 12px;
 }
 
-/* Styling for location cards */
 .location-card {
     background-color: #fff8ec;
     padding: 16px;
@@ -98,7 +74,6 @@ h2 {
     transform: scale(1.05);
 }
 
-/* Modal styling */
 .modal {
     position: fixed;
     top: 0;
@@ -134,12 +109,6 @@ h2 {
     cursor: pointer;
 }
 
-h3 {
-    font-size: 1.25rem;
-    color: #6b4f4f;
-    margin-bottom: 16px;
-}
-
 textarea {
     width: 100%;
     height: 80px;
@@ -167,22 +136,6 @@ textarea {
 }
 
 .save-button:hover {
-    background-color: #c0774e;
-    transform: scale(1.05);
-}
-
-.edit-button {
-    background-color: #d88a58;
-    color: #ffffff;
-    font-size: 0.9rem;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.edit-button:hover {
     background-color: #c0774e;
     transform: scale(1.05);
 }
