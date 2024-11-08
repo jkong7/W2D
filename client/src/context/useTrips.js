@@ -65,16 +65,18 @@ export function TripsProvider ({ children }) {
         }
     }
 
-    const createTrip = async(tripName, items) => {
+    const createTrip = async (name, items) => {
         try {
-            const response = await api.post('/trips/create-trip', { tripName, items })
+            const response = await api.post('/trips/create-trip', { name, items });
             setTrips(prevTrips =>
                 [...prevTrips, response.data.trip]
-            )
+            );
+            return response; 
         } catch (error) {
-            console.log(error.message)
+            console.log(error.message);
+            throw error; 
         }
-    }
+    };
     
 
     useEffect(() => {

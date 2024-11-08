@@ -14,6 +14,13 @@ const corsOptions = {
     credentials: true,
 };
 
+const openAiApiKey = process.env.OPENAI_API_KEY
+if (!openAiApiKey) {
+    throw new Error('OpenAI API key is missing. Please check your .env file.');
+}
+
+console.log('OpenAI API key loaded successfully');
+
 const app = express()
 app.use(express.json())
 app.use(cookieParser())
